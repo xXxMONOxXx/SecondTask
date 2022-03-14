@@ -1,132 +1,134 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema"
-        xsi:noNamespaceSchemaLocation="computerComponents.xsd">
-    <complexType name="computer-component-type">
-        <sequence>
-            <element name="name">
-                <simpleType>
-                    <restriction base="string">
-                        <minLength value="5"/>
-                        <maxLength value="30"/>
-                    </restriction>
-                </simpleType>
-            </element>
-            <element name="origin">
-                <simpleType>
-                    <restriction base="string">
-                        <minLength value="2"/>
-                        <maxLength value="30"/>
-                    </restriction>
-                </simpleType>
-            </element>
-            <element name="price" type="nonNegativeInteger"/>
-            <element name="is-critical" type="boolean"/>
-        </sequence>
-        <attribute name="serial-number" type="ID" use="required"/>
-        <attribute name="peripheral-type" type="peripheral-group" use="optional"/>
-    </complexType>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType name="computer-component-type">
+        <xs:sequence>
+            <xs:element name="name">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="3"/>
+                        <xs:maxLength value="30"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="origin">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="2"/>
+                        <xs:maxLength value="30"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="price" type="xs:nonNegativeInteger"/>
+            <xs:element name="is-critical" type="xs:boolean"/>
+            <!--            <element name="date-of-manufacture" type="dateTime"/>  todo  -->
+        </xs:sequence>
+        <xs:attribute name="serial-number" type="xs:ID" use="required"/>
+        <xs:attribute name="peripheral-type" use="optional" default="without">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="multimedia"/>
+                    <xs:enumeration value="io-device"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
 
-    <complexType name="sound-type">
-        <complexContent>
-            <extension base="computer-component-type">
-                <sequence>
-                    <element name="port" type="port-type"/>
-                </sequence>
-            </extension>
-        </complexContent>
-    </complexType>
+    <xs:complexType name="sound-type">
+        <xs:complexContent>
+            <xs:extension base="computer-component-type">
+                <xs:sequence>
+                    <xs:element ref="port"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
 
-    <complexType name="mouse-type">
-        <complexContent>
-            <extension base="computer-component-type">
-                <sequence>
-                    <element name="port" type="port-type"/>
-                </sequence>
-            </extension>
-        </complexContent>
-    </complexType>
+    <xs:complexType name="mouse-type">
+        <xs:complexContent>
+            <xs:extension base="computer-component-type">
+                <xs:sequence>
+                    <xs:element ref="port"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
 
-    <complexType name="keyboard-type">
-        <complexContent>
-            <extension base="computer-component-type">
-                <sequence>
-                    <element name="ports">
-                        <complexType>
-                            <sequence>
-                                <element minOccurs="1" maxOccurs="unbounded" name="port" type="port-type"/>
-                            </sequence>
-                        </complexType>
-                    </element>
-                </sequence>
-            </extension>
-        </complexContent>
-    </complexType>
+    <xs:complexType name="keyboard-type">
+        <xs:complexContent>
+            <xs:extension base="computer-component-type">
+                <xs:sequence>
+                    <xs:element name="ports">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element ref="port" minOccurs="1" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
 
-    <complexType name="cpu-type">
-        <complexContent>
-            <extension base="computer-component-type">
-                <sequence>
-                    <element name="power-usage" type="nonNegativeInteger"/>
-                    <element name="presence-of-fan" type="boolean"/>
-                </sequence>
-            </extension>
-        </complexContent>
-    </complexType>
+    <xs:complexType name="cpu-type">
+        <xs:complexContent>
+            <xs:extension base="computer-component-type">
+                <xs:sequence>
+                    <xs:element name="power-usage" type="xs:nonNegativeInteger"/>
+                    <xs:element name="presence-of-fan" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
 
-    <complexType name="gpu-type">
-        <complexContent>
-            <extension base="computer-component-type">
-                <sequence>
-                    <element name="power-usage" type="nonNegativeInteger"/>
-                    <element name="presence-of-fan" type="boolean"/>
-                    <element name="ports">
-                        <complexType>
-                            <sequence>
-                                <element minOccurs="1" maxOccurs="unbounded" name="port" type="port-type"/>
-                            </sequence>
-                        </complexType>
-                    </element>
-                </sequence>
-            </extension>
-        </complexContent>
-    </complexType>
+    <xs:complexType name="gpu-type">
+        <xs:complexContent>
+            <xs:extension base="computer-component-type">
+                <xs:sequence>
+                    <xs:element name="power-usage" type="xs:nonNegativeInteger"/>
+                    <xs:element name="presence-of-fan" type="xs:boolean"/>
+                    <xs:element name="ports">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element ref="port" minOccurs="1" maxOccurs="unbounded"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
 
-    <element name="computer-component" type="computer-component-type" abstract="true"/>
+    <xs:element name="computer-component" type="computer-component-type" abstract="true"/>
 
-    <element name="cpu" type="cpu-type" substitutionGroup="computer-component"/>
+    <xs:element name="cpu" type="cpu-type" substitutionGroup="computer-component"/>
 
-    <element name="headphones" type="sound-type" substitutionGroup="computer-component"/>
+    <xs:element name="headphones" type="sound-type" substitutionGroup="computer-component"/>
 
-    <element name="mouse" type="mouse-type" substitutionGroup="computer-component"/>
+    <xs:element name="mouse" type="mouse-type" substitutionGroup="computer-component"/>
 
-    <element name="keyboard" type="keyboard-type" substitutionGroup="computer-component"/>
+    <xs:element name="keyboard" type="keyboard-type" substitutionGroup="computer-component"/>
 
-    <element name="gpu" type="gpu-type" substitutionGroup="computer-component"/>
+    <xs:element name="gpu" type="gpu-type" substitutionGroup="computer-component"/>
 
-    <element name="port-type">
-        <simpleType>
-            <restriction base="string">
-                <enumeration value="USB"/>
-                <enumeration value="COM"/>
-                <enumeration value="LPT"/>
-            </restriction>
-        </simpleType>
-    </element>
+    <xs:element name="port">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="USB"/>
+                <xs:enumeration value="COM"/>
+                <xs:enumeration value="LPT"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
 
-    <element name="peripheral-group">
-        <simpleType>
-            <restriction base="string">
-                <enumeration value="multimedia"/>
-                <enumeration value="io-device"/>
-            </restriction>
-        </simpleType>
-    </element>
+    <xs:element name="peripheral-type">
 
-    <element name="devices">
-        <complexType>
-            <sequence>
-                <element ref="computer-component" maxOccurs="unbounded"/>
-            </sequence>
-        </complexType>
-    </element>
-</schema>
+    </xs:element>
+
+    <xs:element name="devices">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="computer-component" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

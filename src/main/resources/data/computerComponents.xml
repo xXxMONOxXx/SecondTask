@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<devices xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="computerComponents.xsd">
+<devices xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+         xs:noNamespaceSchemaLocation="computerComponents.xsd">
 
-    <cpu serial-number="1">
+    <cpu serial-number="ID1">
         <name>Intel</name>
         <origin>USA</origin>
         <price>499</price>
@@ -11,7 +11,7 @@
         <presence-of-fan>false</presence-of-fan>
     </cpu>
 
-    <gpu serial-number="2">
+    <gpu serial-number="ID2">
         <name>Nvidia</name>
         <origin>USA</origin>
         <price>300</price>
@@ -24,7 +24,7 @@
         </ports>
     </gpu>
 
-    <mouse serial-number="3" peripheral-type="io-device">
+    <mouse serial-number="ID3" peripheral-type="io-device">
         <name>Razer</name>
         <origin>China</origin>
         <price>98</price>
@@ -32,7 +32,7 @@
         <port>USB</port>
     </mouse>
 
-    <headphones serial-number="4" peripheral-type="multimedia">
+    <headphones serial-number="ID4" peripheral-type="multimedia">
         <name>HyperX</name>
         <origin>China</origin>
         <price>120</price>
@@ -40,7 +40,7 @@
         <port>USB</port>
     </headphones>
 
-    <keyboard serial-number="5" peripheral-type="io-device">
+    <keyboard serial-number="ID5" peripheral-type="io-device">
         <name>SteelSeries</name>
         <origin>China</origin>
         <price>150</price>
@@ -51,7 +51,7 @@
         </ports>
     </keyboard>
 
-    <mouse serial-number="6" peripheral-type="io-device">
+    <mouse serial-number="ID6" peripheral-type="io-device">
         <name>HeadPhones2</name>
         <origin>India</origin>
         <price>69</price>
@@ -59,7 +59,7 @@
         <port>USB</port>
     </mouse>
 
-    <headphones serial-number="7" peripheral-type="multimedia">
+    <headphones serial-number="ID7" peripheral-type="multimedia">
         <name>Mouse2</name>
         <origin>Russia</origin>
         <price>59</price>
@@ -67,7 +67,7 @@
         <port>USB</port>
     </headphones>
 
-    <keyboard serial-number="8" peripheral-type="io-device">
+    <keyboard serial-number="ID8" peripheral-type="io-device">
         <name>HyperX</name>
         <origin>China</origin>
         <price>200</price>
@@ -77,7 +77,7 @@
         </ports>
     </keyboard>
 
-    <keyboard serial-number="9" peripheral-type="io-device">
+    <keyboard serial-number="ID9" peripheral-type="io-device">
         <name>KeyBoard3</name>
         <origin>USA</origin>
         <price>280</price>
@@ -89,7 +89,7 @@
         </ports>
     </keyboard>
 
-    <cpu serial-number="10">
+    <cpu serial-number="ID10">
         <name>Elbrus</name>
         <origin>Russia</origin>
         <price>999</price>
@@ -98,7 +98,7 @@
         <presence-of-fan>true</presence-of-fan>
     </cpu>
 
-    <gpu serial-number="11">
+    <gpu serial-number="ID11">
         <name>AMD</name>
         <origin>USA</origin>
         <price>400</price>
@@ -112,7 +112,7 @@
         </ports>
     </gpu>
 
-    <cpu serial-number="12">
+    <cpu serial-number="ID12">
         <name>AMD</name>
         <origin>USA</origin>
         <price>699</price>
@@ -121,7 +121,7 @@
         <presence-of-fan>true</presence-of-fan>
     </cpu>
 
-    <gpu serial-number="13">
+    <gpu serial-number="ID13">
         <name>Nvidia</name>
         <origin>USA</origin>
         <price>350</price>
@@ -134,7 +134,7 @@
         </ports>
     </gpu>
 
-    <headphones serial-number="14" peripheral-type="multimedia">
+    <headphones serial-number="ID14" peripheral-type="multimedia">
         <name>Bloody</name>
         <origin>China</origin>
         <price>89</price>
@@ -142,7 +142,7 @@
         <port>USB</port>
     </headphones>
 
-    <keyboard serial-number="15" peripheral-type="io-device">
+    <keyboard serial-number="ID15" peripheral-type="io-device">
         <name>Bloody</name>
         <origin>China</origin>
         <price>79</price>
@@ -152,7 +152,7 @@
         </ports>
     </keyboard>
 
-    <mouse serial-number="16" peripheral-type="io-device">
+    <mouse serial-number="ID16" peripheral-type="io-device">
         <name>Bloody</name>
         <origin>China</origin>
         <price>60</price>
