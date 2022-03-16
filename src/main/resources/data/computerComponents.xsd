@@ -20,7 +20,7 @@
             </xs:element>
             <xs:element name="price" type="xs:nonNegativeInteger"/>
             <xs:element name="is-critical" type="xs:boolean"/>
-            <!--            <element name="date-of-manufacture" type="dateTime"/>  todo  -->
+            <xs:element name="date-of-manufacture" type="xs:date"/>
         </xs:sequence>
         <xs:attribute name="serial-number" type="xs:ID" use="required"/>
         <xs:attribute name="peripheral-type" use="optional" default="without">

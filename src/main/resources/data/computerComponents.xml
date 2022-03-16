@@ -7,6 +7,7 @@
         <origin>USA</origin>
         <price>499</price>
         <is-critical>true</is-critical>
+        <date-of-manufacture>2020-10-22</date-of-manufacture>
         <power-usage>92</power-usage>
         <presence-of-fan>false</presence-of-fan>
     </cpu>
@@ -16,6 +17,7 @@
         <origin>USA</origin>
         <price>300</price>
         <is-critical>true</is-critical>
+        <date-of-manufacture>2019-10-14</date-of-manufacture>
         <power-usage>150</power-usage>
         <presence-of-fan>true</presence-of-fan>
         <ports>
@@ -29,6 +31,7 @@
         <origin>China</origin>
         <price>98</price>
         <is-critical>false</is-critical>
+        <date-of-manufacture>2020-07-24</date-of-manufacture>
         <port>USB</port>
     </mouse>
 
@@ -37,6 +40,7 @@
         <origin>China</origin>
         <price>120</price>
         <is-critical>false</is-critical>
+        <date-of-manufacture>2020-08-25</date-of-manufacture>
         <port>USB</port>
     </headphones>
 
@@ -45,6 +49,7 @@
         <origin>China</origin>
         <price>150</price>
         <is-critical>false</is-critical>
+        <date-of-manufacture>2022-06-02</date-of-manufacture>
         <ports>
             <port>USB</port>
             <port>USB</port>
@@ -56,6 +61,7 @@
         <origin>India</origin>
         <price>69</price>
         <is-critical>false</is-critical>
+        <date-of-manufacture>2022-07-05</date-of-manufacture>
         <port>USB</port>
     </mouse>
 
@@ -64,6 +70,7 @@
         <origin>Russia</origin>
         <price>59</price>
         <is-critical>false</is-critical>
+        <date-of-manufacture>2021-04-06</date-of-manufacture>
         <port>USB</port>
     </headphones>
 
@@ -72,6 +79,7 @@
         <origin>China</origin>
         <price>200</price>
         <is-critical>true</is-critical>
+        <date-of-manufacture>2020-07-24</date-of-manufacture>
         <ports>
             <port>USB</port>
         </ports>
@@ -82,6 +90,7 @@
         <origin>USA</origin>
         <price>280</price>
         <is-critical>true</is-critical>
+        <date-of-manufacture>2021-02-17</date-of-manufacture>
         <ports>
             <port>USB</port>
             <port>USB</port>
@@ -94,6 +103,7 @@
         <origin>Russia</origin>
         <price>999</price>
         <is-critical>true</is-critical>
+        <date-of-manufacture>2020-09-15</date-of-manufacture>
         <power-usage>192</power-usage>
         <presence-of-fan>true</presence-of-fan>
     </cpu>
@@ -103,6 +113,7 @@
         <origin>USA</origin>
         <price>400</price>
         <is-critical>true</is-critical>
+        <date-of-manufacture>2018-06-28</date-of-manufacture>
         <power-usage>150</power-usage>
         <presence-of-fan>true</presence-of-fan>
         <ports>
@@ -117,6 +128,7 @@
         <origin>USA</origin>
         <price>699</price>
         <is-critical>true</is-critical>
+        <date-of-manufacture>2022-09-09</date-of-manufacture>
         <power-usage>102</power-usage>
         <presence-of-fan>true</presence-of-fan>
     </cpu>
@@ -126,6 +138,7 @@
         <origin>USA</origin>
         <price>350</price>
         <is-critical>true</is-critical>
+        <date-of-manufacture>2022-06-14</date-of-manufacture>
         <power-usage>160</power-usage>
         <presence-of-fan>true</presence-of-fan>
         <ports>
@@ -139,6 +152,7 @@
         <origin>China</origin>
         <price>89</price>
         <is-critical>false</is-critical>
+        <date-of-manufacture>2022-04-22</date-of-manufacture>
         <port>USB</port>
     </headphones>
 
@@ -147,6 +161,7 @@
         <origin>China</origin>
         <price>79</price>
         <is-critical>true</is-critical>
+        <date-of-manufacture>2018-11-14</date-of-manufacture>
         <ports>
             <port>USB</port>
         </ports>
@@ -157,6 +172,7 @@
         <origin>China</origin>
         <price>60</price>
         <is-critical>false</is-critical>
+        <date-of-manufacture>2018-05-28</date-of-manufacture>
         <port>USB</port>
     </mouse>
 

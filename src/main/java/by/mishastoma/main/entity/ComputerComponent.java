@@ -1,28 +1,22 @@
 package by.mishastoma.main.entity;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
-public abstract class ComputerComponent {
+abstract class ComputerComponent {
 
-    private int serialNumber;
-    private String name;
-    private String origin;
-    private int price;
-    private boolean isCritical;
+    protected String serialNumber;
+    protected String name;
+    protected String origin;
+    protected int price;
+    protected boolean isCritical;
+    protected LocalDate manufactureDate;
 
-    protected ComputerComponent(int serialNumber, String name, String origin, int price, boolean isCritical) {
-        this.serialNumber = serialNumber;
-        this.name = name;
-        this.origin = origin;
-        this.price = price;
-        this.isCritical = isCritical;
-    }
-
-    public int getSerialNumber() {
+    public String getSerialNumber() {
         return serialNumber;
     }
 
-    public void setSerialNumber(int serialNumber) {
+    public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
     }
 
@@ -58,15 +52,12 @@ public abstract class ComputerComponent {
         isCritical = critical;
     }
 
-    @Override
-    public String toString() {
-        return "ComputerComponent{" +
-                "serialNumber=" + serialNumber +
-                ", name='" + name + '\'' +
-                ", origin='" + origin + '\'' +
-                ", price=" + price +
-                ", isCritical=" + isCritical +
-                '}';
+    public LocalDate getManufactureDate() {
+        return manufactureDate;
+    }
+
+    public void setManufactureDate(LocalDate dateOfManufacture) {
+        this.manufactureDate = dateOfManufacture;
     }
 
     @Override
@@ -78,11 +69,24 @@ public abstract class ComputerComponent {
                 price == that.price &&
                 isCritical == that.isCritical &&
                 name.equals(that.name) &&
-                origin.equals(that.origin);
+                origin.equals(that.origin) &&
+                manufactureDate.equals(that.manufactureDate);
+    }
+
+    @Override
+    public String toString() {
+        return "AbstractComputerComponent{" +
+                "serialNumber=" + serialNumber +
+                ", name='" + name + '\'' +
+                ", origin='" + origin + '\'' +
+                ", price=" + price +
+                ", isCritical=" + isCritical +
+                ", dateOfManufacture=" + manufactureDate +
+                '}';
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(serialNumber, name, origin, price, isCritical);
+        return Objects.hash(serialNumber, name, origin, price, isCritical, manufactureDate);
     }
 }
