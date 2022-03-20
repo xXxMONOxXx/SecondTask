@@ -2,9 +2,19 @@ package by.mishastoma.main.entity;
 
 import java.time.LocalDate;
 
-public class Headphones extends ComputerComponent {
+public class Headphones extends AComputerComponent {
 
     private String port;
+
+    private String peripheralType;
+
+    public String getPeripheralType() {
+        return peripheralType;
+    }
+
+    public void setPeripheralType(String peripheralType) {
+        this.peripheralType = peripheralType;
+    }
 
     public String getPort() {
         return port;
@@ -12,6 +22,20 @@ public class Headphones extends ComputerComponent {
 
     public void setPort(String port) {
         this.port = port;
+    }
+
+    @Override
+    public String toString() {
+        return "Headphones{" +
+                "serialNumber='" + serialNumber + '\'' +
+                ", name='" + name + '\'' +
+                ", origin='" + origin + '\'' +
+                ", price=" + price +
+                ", isCritical=" + isCritical +
+                ", manufactureDate=" + manufactureDate +
+                ", port='" + port + '\'' +
+                ", peripheralType='" + peripheralType + '\'' +
+                '}';
     }
 
     public static class Builder {
@@ -56,7 +80,12 @@ public class Headphones extends ComputerComponent {
             return this;
         }
 
-        public ComputerComponent build() {
+        public Builder withPeripheralType(String peripheralType){
+            newHeadphones.peripheralType = peripheralType;
+            return this;
+        }
+
+        public Headphones build() {
             return newHeadphones;
         }
     }

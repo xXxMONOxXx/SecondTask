@@ -23,7 +23,7 @@
             <xs:element name="date-of-manufacture" type="xs:date"/>
         </xs:sequence>
         <xs:attribute name="serial-number" type="xs:ID" use="required"/>
-        <xs:attribute name="peripheral-type" use="optional" default="without">
+        <xs:attribute name="peripheral-type" use="optional">
             <xs:simpleType>
                 <xs:restriction base="xs:string">
                     <xs:enumeration value="multimedia"/>

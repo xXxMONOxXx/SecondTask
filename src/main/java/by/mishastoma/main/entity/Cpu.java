@@ -2,7 +2,7 @@ package by.mishastoma.main.entity;
 
 import java.time.LocalDate;
 
-public class Cpu extends ComputerComponent {
+public class Cpu extends AComputerComponent{
 
     private int powerUsage;
 
@@ -24,55 +24,70 @@ public class Cpu extends ComputerComponent {
         this.hasFan = hasFan;
     }
 
-        public static class Builder {
-            private Cpu newCpu;
+    @Override
+    public String toString() {
+        return "Cpu{" +
+                "serialNumber='" + serialNumber + '\'' +
+                ", name='" + name + '\'' +
+                ", origin='" + origin + '\'' +
+                ", price=" + price +
+                ", isCritical=" + isCritical +
+                ", manufactureDate=" + manufactureDate +
+                ", powerUsage=" + powerUsage +
+                ", hasFan=" + hasFan +
+                '}';
+    }
 
-            public Builder() {
-                newCpu = new Cpu();
-            }
+    public static class Builder {
 
-            public Builder withName(String name) {
-                newCpu.name = name;
-                return this;
-            }
+        private Cpu newCpu;
 
-            public Builder withOrigin(String origin) {
-                newCpu.origin = origin;
-                return this;
-            }
-
-            public Builder withSerialNumber(String serialNumber) {
-                newCpu.serialNumber = serialNumber;
-                return this;
-            }
-
-            public Builder withPrice(int price) {
-                newCpu.price = price;
-                return this;
-            }
-
-            public Builder withIsCritical(boolean isCritical) {
-                newCpu.isCritical = isCritical;
-                return this;
-            }
-
-            public Builder withManufactureDate(LocalDate manufactureDate){
-                newCpu.manufactureDate=manufactureDate;
-                return this;
-            }
-
-            public Builder withPowerUsage (int powerUsage){
-                newCpu.powerUsage = powerUsage;
-                return this;
-            }
-
-            public Builder withHasFan(boolean hasFan){
-                newCpu.hasFan = hasFan;
-                return this;
-            }
-
-            public Cpu build() {
-                return newCpu;
-            }
+        public Builder() {
+            newCpu = new Cpu();
         }
+
+        public Builder withName(String name) {
+            newCpu.name = name;
+            return this;
+        }
+
+        public Builder withOrigin(String origin) {
+            newCpu.origin = origin;
+            return this;
+        }
+
+        public Builder withSerialNumber(String serialNumber) {
+            newCpu.serialNumber = serialNumber;
+            return this;
+        }
+
+        public Builder withPrice(int price) {
+            newCpu.price = price;
+            return this;
+        }
+
+        public Builder withIsCritical(boolean isCritical) {
+            newCpu.isCritical = isCritical;
+            return this;
+        }
+
+        public Builder withManufactureDate(LocalDate manufactureDate) {
+            newCpu.manufactureDate = manufactureDate;
+            return this;
+        }
+
+        public Builder withPowerUsage(int powerUsage) {
+            newCpu.powerUsage = powerUsage;
+            return this;
+        }
+
+        public Builder withHasFan(boolean hasFan) {
+            newCpu.hasFan = hasFan;
+            return this;
+        }
+
+        public Cpu build() {
+            return newCpu;
+        }
+    }
 }

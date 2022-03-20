@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Gpu extends ComputerComponent {
+public class Gpu extends AComputerComponent {
 
     private int powerUsage;
 
@@ -34,6 +34,21 @@ public class Gpu extends ComputerComponent {
 
     public void setHasFan(boolean hasFan) {
         this.hasFan = hasFan;
+    }
+
+    @Override
+    public String toString() {
+        return "Gpu{" +
+                "serialNumber='" + serialNumber + '\'' +
+                ", name='" + name + '\'' +
+                ", origin='" + origin + '\'' +
+                ", price=" + price +
+                ", isCritical=" + isCritical +
+                ", manufactureDate=" + manufactureDate +
+                ", powerUsage=" + powerUsage +
+                ", hasFan=" + hasFan +
+                ", ports=" + ports +
+                '}';
     }
 
     public static class Builder {
@@ -83,7 +98,12 @@ public class Gpu extends ComputerComponent {
             return this;
         }
 
-        public ComputerComponent build() {
+        public Builder withPorts(List<String> ports){
+            newGpu.ports = ports;
+            return this;
+        }
+
+        public Gpu build() {
             return newGpu;
         }
     }

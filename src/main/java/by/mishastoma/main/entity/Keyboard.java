@@ -4,9 +4,19 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Keyboard extends ComputerComponent {
+public class Keyboard extends AComputerComponent {
 
     private List<String> ports = new ArrayList<>();
+
+    private String peripheralType;
+
+    public String getPeripheralType() {
+        return peripheralType;
+    }
+
+    public void setPeripheralType(String peripheralType) {
+        this.peripheralType = peripheralType;
+    }
 
     public List<String> getPorts() {
         return ports;
@@ -14,6 +24,20 @@ public class Keyboard extends ComputerComponent {
 
     public void setPorts(List<String> ports) {
         this.ports = ports;
+    }
+
+    @Override
+    public String toString() {
+        return "Keyboard{" +
+                "serialNumber='" + serialNumber + '\'' +
+                ", name='" + name + '\'' +
+                ", origin='" + origin + '\'' +
+                ", price=" + price +
+                ", isCritical=" + isCritical +
+                ", manufactureDate=" + manufactureDate +
+                ", ports=" + ports +
+                ", peripheralType='" + peripheralType + '\'' +
+                '}';
     }
 
     public static class Builder {
@@ -58,7 +82,12 @@ public class Keyboard extends ComputerComponent {
             return this;
         }
 
-        public ComputerComponent build() {
+        public Builder withPeripheralType (String peripheralType){
+            newKeyboard.peripheralType = peripheralType;
+            return this;
+        }
+
+        public Keyboard build() {
             return newKeyboard;
         }
     }

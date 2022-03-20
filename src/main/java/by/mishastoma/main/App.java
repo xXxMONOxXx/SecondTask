@@ -1,34 +1,20 @@
 package by.mishastoma.main;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+//src/main/resources/data/computerComponents.xml
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
+import by.mishastoma.main.builder.DevicesDomBuilder;
+import by.mishastoma.main.validator.XmlFileValidator;
 
 public class App
 {
-    private static final Logger logger = LogManager.getLogger();
 
-    public static void main( String[] args )
-    {
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+    public static void main( String[] args ) {
         try {
-            DocumentBuilder builder = factory.newDocumentBuilder();
-            Document doc = builder.parse("src/main/resources/data/computerComponents.xml");
-            NodeList nodes = doc.getElementsByTagName("devices");
-            NodeList nodeList = nodes.item(0).getChildNodes();
-            for(int i=0 ;i<nodeList.getLength();i++){
-                if(nodeList.item(i).getNodeType() == Node.ELEMENT_NODE) {
-                    System.out.println(nodeList.item(i).getNodeName());
-                }
-            }
+            DevicesDomBuilder builder = new DevicesDomBuilder();
+            builder.buildDevicesList("src/main/resources/data/computerComponents.xml");
         }
         catch (Exception e){
-            logger.info(e.getMessage());
+            e.printStackTrace();
         }
     }
 }

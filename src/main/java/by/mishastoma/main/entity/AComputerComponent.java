@@ -3,7 +3,7 @@ package by.mishastoma.main.entity;
 import java.time.LocalDate;
 import java.util.Objects;
 
-abstract class ComputerComponent {
+abstract class AComputerComponent {
 
     protected String serialNumber;
     protected String name;
@@ -64,7 +64,7 @@ abstract class ComputerComponent {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ComputerComponent that = (ComputerComponent) o;
+        AComputerComponent that = (AComputerComponent) o;
         return serialNumber == that.serialNumber &&
                 price == that.price &&
                 isCritical == that.isCritical &&
