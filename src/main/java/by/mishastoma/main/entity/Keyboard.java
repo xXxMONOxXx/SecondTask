@@ -26,6 +26,10 @@ public class Keyboard extends AComputerComponent {
         this.ports = ports;
     }
 
+    public void addPort(String port) {
+        this.ports.add(port);
+    }
+
     @Override
     public String toString() {
         return "Keyboard{" +
@@ -82,7 +86,7 @@ public class Keyboard extends AComputerComponent {
             return this;
         }
 
-        public Builder withPeripheralType (String peripheralType){
+        public Builder withPeripheralType(String peripheralType) {
             newKeyboard.peripheralType = peripheralType;
             return this;
         }

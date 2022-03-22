@@ -20,6 +20,10 @@ public class Gpu extends AComputerComponent {
         this.ports = ports;
     }
 
+    public void addPort(String port) {
+        this.ports.add(port);
+    }
+
     public int getPowerUsage() {
         return powerUsage;
     }
@@ -83,22 +87,22 @@ public class Gpu extends AComputerComponent {
             return this;
         }
 
-        public Builder withManufactureDate(LocalDate manufactureDate){
-            newGpu.manufactureDate=manufactureDate;
+        public Builder withManufactureDate(LocalDate manufactureDate) {
+            newGpu.manufactureDate = manufactureDate;
             return this;
         }
 
-        public Builder withPowerUsage (int powerUsage){
+        public Builder withPowerUsage(int powerUsage) {
             newGpu.powerUsage = powerUsage;
             return this;
         }
 
-        public Builder withHasFan(boolean hasFan){
+        public Builder withHasFan(boolean hasFan) {
             newGpu.hasFan = hasFan;
             return this;
         }
 
-        public Builder withPorts(List<String> ports){
+        public Builder withPorts(List<String> ports) {
             newGpu.ports = ports;
             return this;
         }

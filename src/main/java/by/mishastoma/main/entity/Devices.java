@@ -23,4 +23,8 @@ public class Devices {
         return devices.get(index);
     }
 
+    public int size(){
+        return devices.size();
+    }
+
 }

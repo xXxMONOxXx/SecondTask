@@ -1,20 +1,28 @@
 package by.mishastoma.main;
 
-//src/main/resources/data/computerComponents.xml
-
-import by.mishastoma.main.builder.DevicesDomBuilder;
-import by.mishastoma.main.validator.XmlFileValidator;
+import by.mishastoma.main.entity.Devices;
+import by.mishastoma.main.parser.DevicesSaxParser;
 
 public class App
 {
 
     public static void main( String[] args ) {
+        DevicesSaxParser parser = new DevicesSaxParser();
         try {
-            DevicesDomBuilder builder = new DevicesDomBuilder();
-            builder.buildDevicesList("src/main/resources/data/computerComponents.xml");
+            parser.buildDevicesList("src/main/resources/data/computerComponents.xml");
         }
         catch (Exception e){
             e.printStackTrace();
+            return;
+        }
+        Devices devices = parser.getDevices();
+        for (int i=0;i<devices.size();i++) {
+            try {
+                System.out.println(devices.get(i).toString());
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
         }
     }
 }

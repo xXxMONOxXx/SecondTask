@@ -3,7 +3,7 @@ package by.mishastoma.main.entity;
 import java.time.LocalDate;
 import java.util.Objects;
 
-abstract class AComputerComponent {
+public abstract class AComputerComponent {
 
     protected String serialNumber;
     protected String name;
