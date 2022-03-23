@@ -1,8 +1,8 @@
-package by.mishastoma.main.entity;
+package by.mishastoma.entity;
 
 import java.time.LocalDate;
 
-public class Headphones extends AComputerComponent {
+public class Mouse extends AComputerComponent {
 
     private String port;
 
@@ -26,7 +26,7 @@ public class Headphones extends AComputerComponent {
 
     @Override
     public String toString() {
-        return "Headphones{" +
+        return "Mouse{" +
                 "serialNumber='" + serialNumber + '\'' +
                 ", name='" + name + '\'' +
                 ", origin='" + origin + '\'' +
@@ -39,54 +39,54 @@ public class Headphones extends AComputerComponent {
     }
 
     public static class Builder {
-        private Headphones newHeadphones;
+        private Mouse newMouse;
 
         public Builder() {
-            newHeadphones = new Headphones();
+            newMouse = new Mouse();
         }
 
         public Builder withName(String name) {
-            newHeadphones.name = name;
+            newMouse.name = name;
             return this;
         }
 
         public Builder withOrigin(String origin) {
-            newHeadphones.origin = origin;
+            newMouse.origin = origin;
             return this;
         }
 
         public Builder withSerialNumber(String serialNumber) {
-            newHeadphones.serialNumber = serialNumber;
+            newMouse.serialNumber = serialNumber;
             return this;
         }
 
         public Builder withPrice(int price) {
-            newHeadphones.price = price;
+            newMouse.price = price;
             return this;
         }
 
         public Builder withIsCritical(boolean isCritical) {
-            newHeadphones.isCritical = isCritical;
+            newMouse.isCritical = isCritical;
             return this;
         }
 
         public Builder withManufactureDate(LocalDate manufactureDate) {
-            newHeadphones.manufactureDate = manufactureDate;
+            newMouse.manufactureDate = manufactureDate;
             return this;
         }
 
         public Builder withPort(String port) {
-            newHeadphones.port = port;
+            newMouse.port = port;
             return this;
         }
 
         public Builder withPeripheralType(String peripheralType){
-            newHeadphones.peripheralType = peripheralType;
+            newMouse.peripheralType = peripheralType;
             return this;
         }
 
-        public Headphones build() {
-            return newHeadphones;
+        public Mouse build() {
+            return newMouse;
         }
     }
 }

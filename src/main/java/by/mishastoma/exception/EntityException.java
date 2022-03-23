@@ -1,4 +1,4 @@
-package by.mishastoma.main.exception;
+package by.mishastoma.exception;
 
 public class EntityException extends Exception{
 

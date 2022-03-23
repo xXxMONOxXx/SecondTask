@@ -1,4 +1,4 @@
-package by.mishastoma.main.validator;
+package by.mishastoma.validator;
 
 import javax.xml.XMLConstants;
 import javax.xml.transform.Source;

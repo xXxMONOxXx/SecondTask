@@ -1,4 +1,4 @@
-package by.mishastoma.main.entity;
+package by.mishastoma.entity;
 
 import java.time.LocalDate;
 

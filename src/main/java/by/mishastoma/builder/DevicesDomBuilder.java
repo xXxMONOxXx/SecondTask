@@ -1,7 +1,7 @@
-package by.mishastoma.main.parser;
+package by.mishastoma.builder;
 
-import by.mishastoma.main.entity.*;
-import by.mishastoma.main.exception.XmlParseException;
+import by.mishastoma.entity.*;
+import by.mishastoma.exception.XmlParseException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.w3c.dom.Document;
@@ -18,7 +18,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DevicesDomParser {
+public class DevicesDomBuilder {
 
     private static final Logger logger = LogManager.getLogger();
 
@@ -26,7 +26,7 @@ public class DevicesDomParser {
 
     private DocumentBuilder documentBuilder;
 
-    public DevicesDomParser() throws XmlParseException {
+    public DevicesDomBuilder() throws XmlParseException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         devices = new Devices();
         try {

@@ -1,6 +1,6 @@
-package by.mishastoma.main.entity;
+package by.mishastoma.entity;
 
-import by.mishastoma.main.exception.EntityException;
+import by.mishastoma.exception.EntityException;
 import java.util.ArrayList;
 import java.util.List;
 

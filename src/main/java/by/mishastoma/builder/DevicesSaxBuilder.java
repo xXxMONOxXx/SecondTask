@@ -1,7 +1,7 @@
-package by.mishastoma.main.parser;
+package by.mishastoma.builder;
 
-import by.mishastoma.main.entity.Devices;
-import by.mishastoma.main.exception.XmlParseException;
+import by.mishastoma.entity.Devices;
+import by.mishastoma.exception.XmlParseException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
@@ -12,22 +12,23 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.IOException;
 
-public class DevicesSaxParser {
+public class DevicesSaxBuilder {
 
     private static final Logger logger = LogManager.getLogger();
 
     private Devices devices;
     private XMLReader reader;
-    private DevicesSaxParserHandler handler = new DevicesSaxParserHandler();
+    private DevicesSaxBuilderHandler handler = new DevicesSaxBuilderHandler();
 
-    public DevicesSaxParser(){
+    public DevicesSaxBuilder() throws XmlParseException{
         SAXParserFactory factory = SAXParserFactory.newInstance();
         try{
             SAXParser parser = factory.newSAXParser();
             reader = parser.getXMLReader();
         }
         catch (ParserConfigurationException | SAXException e){
-            e.printStackTrace(); //todo
+            logger.error(e.getMessage());
+            throw new XmlParseException(e.getMessage());
         }
         reader.setContentHandler(handler);
     }
